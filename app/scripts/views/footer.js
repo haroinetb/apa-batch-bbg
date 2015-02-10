@@ -4,12 +4,13 @@ define([
     'jquery',
     'underscore',
     'marionette',
-    'handlebars'
-], function ($, _, Marionette, Handlebars) {
+    'handlebars',
+    'hbs!templates/footer',
+], function ($, _, Marionette, Handlebars, TPL) {
     'use strict';
 
-    var FooterView = Marionette.ItemView.extend({
-        template: Handlebars.compile($('#template_footer').html()),
+    var View = Marionette.ItemView.extend({
+        template: TPL,
 
         tagName: 'div',
 
@@ -22,12 +23,7 @@ define([
         initialize: function () {
             //this.listenTo(this.model, 'change', this.render);
         },
-
-        render: function () {
-            //this.$el.html(this.template(this.model.toJSON()));
-            this.$el.html(this.template());
-        }
     });
 
-    return FooterView;
+    return View;
 });

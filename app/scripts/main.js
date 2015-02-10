@@ -42,14 +42,8 @@ require.config({
 });
 
 require([
-  'app',
-  'backbone',
-  'routers/index',
-  'controllers/index'
-], function(app, Backbone, Router, Controller) {
-  app.start();
-  new Router({
-    controller: Controller
-  });
-  Backbone.history.start();
+  'app'
+], function(app) {
+
+  return window.app = app;
 });

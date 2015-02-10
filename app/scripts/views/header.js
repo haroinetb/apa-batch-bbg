@@ -28,12 +28,6 @@ define([
     initialize: function() {
       //this.listenTo(this.model, 'change', this.render);
     },
-
-    render: function() {
-      //this.$el.html(this.template(this.model.toJSON()));
-      // console.log(Handlebars.compile(this.template));
-      this.$el.html(this.template({test: 'testing', helpers: this.templateHelpers, get_app_name: get_app_name}));
-    }
   });
 
   return HeaderView;

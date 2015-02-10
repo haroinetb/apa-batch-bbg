@@ -1,0 +1,15 @@
+<form>
+  <div class="row form-group {{#if id}}has_id{{else}}new_apa_batch{{/if}}">
+    <div class="col-md-2"><input type="text" class="form-control batch_row_name" value="{{name}}"></div>
+    <div class="col-md-7"><input type="text" class="form-control batch_row_acts" value="{{acts}}"></div>
+{{!--     <div class="col-md-2">{{last_scheduler_id}}</div>
+    <div class="col-md-1">{{csv}}</div> --}}
+    <div class="col-md-1">{{last_run_date}}</div>
+    <div class="col-md-2">
+			<div class="btn-group" role="group" aria-label="...">
+			  <button type="button" class="btn btn-default save">Save</button>
+			  <button type="button" class="btn btn-default delete">Delete</button>
+			</div>
+   	</div>
+  </div>
+</form>

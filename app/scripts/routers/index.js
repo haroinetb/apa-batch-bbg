@@ -7,8 +7,10 @@ define([
       'use strict';
 
       return Marionette.AppRouter.extend({
-        appRoutes: {
-          '*filter': 'setFilter'
-        }
+        // appRoutes: {
+        //   '*filter': 'setFilter'
+        // }
       });
+
+      
     });

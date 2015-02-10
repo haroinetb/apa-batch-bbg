@@ -4,8 +4,8 @@ define([
 ], function(app) {
   'use strict';
   return {
-    setFilter: function(param) {
-      app.vent.trigger('todoList:filter', param && param.trim() || '');
-    }
+    // setFilter: function(param) {
+    //   app.vent.trigger('todoList:filter', param && param.trim() || '');
+    // }
   };
 });

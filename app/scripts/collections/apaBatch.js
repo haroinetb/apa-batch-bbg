@@ -1,15 +1,15 @@
 /*global define*/
 
 define([
-    'underscore',
+    'settings',
     'backbone',
     'models/apaBatch'
-], function (_, Backbone, ApaBatchModel) {
+], function (Settings, Backbone, ApaBatchModel) {
     'use strict';
 
     var ApaBatchCollection = Backbone.Collection.extend({
-    		url: 'http://reports.inetb.com/reports/apa-batch/',
-        model: ApaBatchModel
+    		url: Settings.urlRoot+'apabatch',
+				model: ApaBatchModel
     });
 
     return ApaBatchCollection;

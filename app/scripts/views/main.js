@@ -1,33 +1,37 @@
 /*global define*/
 
 define([
-    'jquery',
-    'underscore',
-    'marionette',
-    'handlebars'
-], function ($, _, Marionette, Handlebars) {
-    'use strict';
+    'namespace',
+  'jquery',
+  'marionette',
+'models/apaBatch',
+  'hbs!templates/main',
+], function(nameSpace, $, Marionette, BatchModel, TPL) {
+  'use strict';
 
-    var FooterView = Marionette.ItemView.extend({
-        template: Handlebars.compile($('#template_main').html()),
+  var MainView = Marionette.LayoutView.extend({
+    template: TPL,
+    regions: {
+      batchRows: '#batch_rows',
+    },
+    tagName: 'div',
 
-        tagName: 'div',
+    id: '',
 
-        id: '',
+    className: '',
 
-        className: '',
+    events: {
+        'click button#create_new' : 'createNew'
+    },
 
-        events: {},
+    createNew: function(){
+        nameSpace.collections.apaBatchCollection.add(new BatchModel());
+    },
 
-        initialize: function () {
-            //this.listenTo(this.model, 'change', this.render);
-        },
+    initialize: function() {
+      //this.listenTo(this.collection, 'change', this.render);
+    },
+  });
 
-        render: function () {
-            //this.$el.html(this.template(this.model.toJSON()));
-            this.$el.html(this.template());
-        }
-    });
-
-    return FooterView;
+  return MainView;
 });

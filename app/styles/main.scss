@@ -2,6 +2,18 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/assets/fonts/bootstr
 
 @import 'bootstrap-sass-official/assets/stylesheets/bootstrap.scss';
 
+div.new_apa_batch{
+    border: 1px solid #000;
+}
+
+.apa_batch_row{
+    background-color: lighten($gray-light,50);
+}
+
+.apa_batch_row:nth-child(even){
+    background-color: $gray-lighter;
+}
+
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;

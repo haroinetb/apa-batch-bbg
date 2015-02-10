@@ -1,13 +1,14 @@
 /*global define*/
 
 define([
+    'settings',
     'underscore',
     'backbone',
-], function (_, Backbone) {
+], function (Settings, _, Backbone) {
     'use strict';
 
     var ApaBatchModel = Backbone.Model.extend({
-        url: '',
+        urlRoot: Settings.urlRoot+'apabatch',
 
         initialize: function() {
         },
